@@ -965,11 +965,261 @@ ex:[
  {t:'match', pairs:[['אתה טועה.',"I'm not sure that's right."],['לא.',"I'm afraid I can't."],['תן לי את זה.','Could I have that, please?'],['מה?','Sorry?'],['תודה. — אין בעד מה.',"Thank you. — You're welcome."],['סליחה (לפנות דרך)','Excuse me.']], why:'כל משפט עברי ישיר מקבל באנגלית עטיפה: I\'m afraid, I\'m not sure, Could I. העטיפה היא לא רכרוכיות — היא הדקדוק החברתי.'}
 ]}
 ]});
+
+// ===== Grammar Underground — curriculum, lines 6–7 (Advanced + Mastery) =====
+
+LINES.push({
+id:'adv', name:'Advanced', he:'מתקדם', color:'rose',
+blurb:'המבנים שמפרידים בין "אנגלית תקינה" ל"אנגלית של דובר משכיל".',
+stations:[
+{ id:'pastperf', name:'Had left', he:'עבר מושלם', tag:'העבר של העבר — הזמן שמסדר סיפור',
+teach:[
+ {h:'בעברית עבר אחד. באנגלית יש "לפני" ו"לפני-לפני".',
+  p:`<b>כשהגעתי, הרכבת כבר יצאה.</b> בעברית שני הפעלים בעבר, ו"כבר" עושה את העבודה. באנגלית מסמנים את האירוע המוקדם יותר עם <span class="en">had + V3</span>:<br><span class="en">When I arrived, the train <b>had</b> already <b>left</b>.</span><br>העבר הפשוט (<span class="en">arrived</span>) הוא נקודת הייחוס; ה-Past Perfect (<span class="en">had left</span>) מספר מה קרה עוד <b>קודם</b>.`,
+  c:[['כשהגעתי, הרכבת כבר יצאה.','When I arrived, the train already left.','…the train <b>had</b> already <b>left</b>.'],['הוא אכל כי כבר הכין ארוחה.','','He ate because he <b>had cooked</b> a meal.']]},
+ {h:'הצורה: had + V3, לכל הגופים',
+  p:`<span class="en">I / you / he / we / they <b>had</b> finished</span> — אין הבדל בין גופים, בניגוד ל-Present Perfect (<span class="en">has / have</span>).<br>קיצור: <span class="en">I'd, she'd</span> (זהיר: <span class="en">'d</span> יכול להיות גם <span class="en">would</span> — ההקשר מבדיל). שלילה: <span class="en">hadn't</span>.<br>מילות סימן: <span class="en">by the time, already, just, after, before, until then, it was the first time…</span>`,
+  c:[['עד שהגענו, הם כבר עזבו.','','By the time we arrived, they <b>had</b> already <b>left</b>.'],['זו הייתה הפעם הראשונה שטסתי.','It was the first time I flew.','…the first time I <b>had</b> ever <b>flown</b>.']]},
+ {h:'למה זה משנה: הסדר משנה את המשמעות',
+  p:`<span class="en">When I <b>arrived</b>, she <b>left</b>.</span> = הגעתי, ואז היא עזבה (בזה אחר זה).<br><span class="en">When I arrived, she <b>had left</b>.</span> = כשהגעתי, היא כבר לא הייתה שם (עזבה קודם).<br>העברית זקוקה למילים כמו "כבר" או "לפני כן" כדי להבהיר; האנגלית קידדה את זה לתוך צורת הפועל עצמה.`,
+  c:[['כשהתקשרתי, הוא כבר הלך לישון.','When I called, he went to sleep.','…he <b>had</b> already <b>gone</b> to sleep.']]}
+],
+ex:[
+ {t:'choice', he:'עד שהגענו, הסרט כבר התחיל.', q:'By the time we arrived, the film ___.', opts:['had already started','already started','has already started','was starting'], a:0, why:'שני אירועים בעבר: ההגעה, וההתחלה שקדמה לה. האירוע המוקדם יותר → had + V3.', wrong:{2:'has started = Present Perfect, שנוגע בהווה. כאן הכול בעבר.'}},
+ {t:'build', he:'היא לא יכלה להיכנס כי שכחה את המפתח.', words:['She',"couldn't",'get','in','because','she',"had",'forgotten','her','key'], extra:['forgot','has'], why:'השכחה קדמה לניסיון להיכנס → had forgotten. forget–forgot–forgotten, וה-V3 הוא forgotten.'},
+ {t:'type', he:'הוא היה עייף כי לא ישן.', q:'He was tired because he ___ (not / sleep).', a:["hadn't slept",'had not slept'], hint:'had + not + V3', why:'חוסר השינה קדם לעייפות → Past Perfect שלילי: hadn\'t slept. sleep–slept–slept.'},
+ {t:'sort', buckets:['קרה קודם (had + V3)','קרה אחר כך (עבר פשוט)'], items:[['the train had left',0],['I got to the station',1],['she had cooked dinner',0],['we sat down to eat',1],['they had already met',0],['he introduced them',1]], why:'האירוע המוקדם בזמן מקבל had + V3; האירוע שאחריו (נקודת הייחוס) בעבר פשוט.'},
+ {t:'fix', toks:['After','she','had','went','home,','she','called.'], bad:3, opts:['gone','go','been'], a:0, fixed:'After she had gone home, she called.', why:'אחרי had צריך צורה שלישית (V3), לא עבר פשוט. go–went–gone → had gone.'},
+ {t:'choice', he:'זו הייתה הפעם הראשונה שראיתי שלג.', q:'It was the first time I ___ snow.', opts:['had seen','saw','have seen','was seeing'], a:0, why:'"הפעם הראשונה ש..." בהקשר עבר גוררת Past Perfect: had seen. המבנה קבוע.'},
+ {t:'match', pairs:[['eat','eaten'],['write','written'],['forget','forgotten'],['leave','left'],['break','broken'],['do','done']], why:'ה-Past Perfect בנוי על ה-V3. חזרה על הצורות השלישיות שהן הלב של המבנה.'},
+ {t:'choice', he:'כשהגעתי היא עזבה (כבר לא הייתה שם).', q:'When I arrived, she ___ (עזבה קודם).', opts:['had left','left','was leaving'], a:0, why:'הכוונה שהיא כבר לא הייתה שם — העזיבה קדמה להגעה → had left. "left" היה אומר שעזבה ברגע שהגעתי.'},
+ {t:'build', he:'הם היו רעבים כי לא אכלו כל היום.', words:['They','were','hungry','because','they',"hadn't",'eaten','all','day'], extra:["didn't",'ate'], why:'אי-האכילה נמשכה עד לרגע הרעב בעבר → hadn\'t eaten. eat–ate–eaten.'}
+]},
+
+{ id:'gerinf', name:'To do / doing', he:'שם פועל וגרונד', tag:'"stop to smoke" מול "stop smoking" — אותה מילה, משמעות הפוכה',
+teach:[
+ {h:'פועל אחרי פועל: לפעמים to, לפעמים -ing',
+  p:`אין כלל הגיוני — צריך לזכור לפי קבוצות:<br><b>+ to</b>: <span class="en">want, decide, hope, plan, promise, agree, learn, need, offer, refuse</span> → <span class="en">I want <b>to go</b>.</span><br><b>+ -ing</b>: <span class="en">enjoy, finish, avoid, mind, suggest, keep, practise, imagine, deny</span> → <span class="en">I enjoy <b>reading</b>.</span><br>בעברית שניהם "לעשות" (רוצה ללכת / נהנה לקרוא) — ולכן אין רמז מהעברית.`,
+  c:[['אני מקווה ללמוד.','I hope learning.','I hope <b>to learn</b>.'],['סיימתי לעבוד.','I finished to work.','I finished <b>working</b>.'],['הוא הציע לעזור.','He suggested to help.','He suggested <b>helping</b>.']]},
+ {h:'הזוגות שבהם המשמעות מתהפכת',
+  p:`<span class="en">stop <b>to</b> smoke</span> = עוצר <b>כדי</b> לעשן · <span class="en">stop <b>smoking</b></span> = מפסיק לעשן.<br><span class="en">remember <b>to</b> lock</span> = לזכור לנעול (עתידי) · <span class="en">remember <b>locking</b></span> = לזכור שנעלת (זיכרון).<br><span class="en">try <b>to</b> open</span> = להתאמץ · <span class="en">try <b>opening</b></span> = לנסות כפתרון.<br>הכלל הסמוי: <span class="en">to</span> מצביע קדימה (מטרה, כוונה); <span class="en">-ing</span> מצביע על הפעולה עצמה (ממשית, שכבר קורית או קרתה).`,
+  c:[['הפסקתי לעשן.','I stopped to smoke.','I stopped <b>smoking</b>.'],['זכור לנעול את הדלת.','Remember locking the door.','Remember <b>to lock</b> the door.']]},
+ {h:'אחרי מילת יחס — תמיד -ing',
+  p:`כל פועל שבא אחרי מילת יחס לובש <span class="en">-ing</span>:<br><span class="en">good <b>at</b> swimming, interested <b>in</b> learning, before <b>leaving</b>, after <b>eating</b>, instead <b>of</b> waiting, thank you <b>for</b> coming</span>.<br>ומלכודת: ב-<span class="en">look forward <b>to</b>, be used <b>to</b>, object <b>to</b></span> — ה-<span class="en">to</span> הוא מילת יחס, לא חלק משם הפועל, ולכן: <span class="en">I look forward to <b>meeting</b> you</span> (לא to meet).`,
+  c:[['אני מצפה לפגוש אותך.','I look forward to meet you.','…look forward to <b>meeting</b> you.'],['הוא טוב בבישול.','He is good at cook.','He is good at <b>cooking</b>.']]}
+],
+ex:[
+ {t:'sort', buckets:['+ to','+ -ing'], items:[['want',0],['enjoy',1],['decide',0],['finish',1],['hope',0],['avoid',1],['promise',0],['suggest',1],['refuse',0],['keep',1]], why:'want / decide / hope / promise / refuse → to. enjoy / finish / avoid / suggest / keep → -ing. אין לוגיקה — זו רשימה לזכירה.'},
+ {t:'choice', he:'הפסקתי לעשן לפני שנה.', q:'I stopped ___ a year ago.', opts:['smoking','to smoke'], a:0, why:'"הפסקתי לעשן" = חדלתי מהפעולה → stop + -ing. "stop to smoke" היה אומר שעצרת כדי לעשן.'},
+ {t:'choice', he:'זכור להתקשר לאמא.', q:'Remember ___ your mother.', opts:['to call','calling'], a:0, why:'משימה עתידית שאסור לשכוח → remember + to. "remember calling" = לזכור שכבר התקשרת.'},
+ {t:'type', he:'אני מצפה לראות אותך.', q:'I look forward to ___ (see) you.', a:['seeing'], hint:'to כאן = מילת יחס', why:'ב-look forward to ה-to הוא מילת יחס, ואחרי מילת יחס תמיד -ing: seeing.'},
+ {t:'fix', toks:['She','avoided','to','answer','the question.'], bad:2, opts:['answering','answer','to answering'], a:0, fixed:'She avoided answering the question.', why:'avoid שייך לקבוצת ה-ing. avoid answering — לא avoid to answer.'},
+ {t:'build', he:'הוא החליט ללמוד רפואה.', words:['He','decided','to','study','medicine'], extra:['studying','study'], why:'decide + to + בסיס. decide נמצא בקבוצת ה-to.'},
+ {t:'choice', he:'תודה שבאת.', q:'Thank you for ___.', opts:['coming','to come','come'], a:0, why:'אחרי מילת היחס for בא תמיד -ing: coming.'},
+ {t:'choice', he:'נסה לפתוח את החלון (כפתרון לחום).', q:"It's hot. Try ___ the window.", opts:['opening','to open'], a:0, why:'"נסה כפתרון / כניסיון" → try + -ing. "try to open" = להתאמץ לפתוח משהו תקוע.'},
+ {t:'build', he:'אני נהנה ללמוד שפות.', words:['I','enjoy','learning','languages'], extra:['to learn','learn'], why:'enjoy תמיד עם -ing: enjoy learning. לעולם לא enjoy to learn.'}
+]},
+
+{ id:'quant', name:'Few / a few', he:'מילות כמות', tag:'"few friends" מול "a few friends": מילה אחת שהופכת עצוב לרגוע',
+teach:[
+ {h:'a few / a little = יש קצת. few / little = כמעט אין.',
+  p:`ה-<span class="en">a</span> הקטן הופך משפט שלילי לחיובי:<br><span class="en">I have <b>a few</b> friends</span> = יש לי כמה חברים (מספיק, טוב).<br><span class="en">I have <b>few</b> friends</span> = יש לי מעט מדי חברים (בודד).<br><span class="en">a few</span> + ספיר ברבים, <span class="en">a little</span> + לא-ספיר: <span class="en">a little time / a little money</span>.<br>בעברית "קצת" ו"מעט" קרובים; באנגלית ה-<span class="en">a</span> קובע אם הכוס חצי מלאה או חצי ריקה.`,
+  c:[['יש לי כמה שאלות.','I have few questions.','I have <b>a few</b> questions.'],['יש מעט מאוד זמן.','','There is <b>little</b> time.'],['תן לי קצת מים.','Give me few water.','Give me <b>a little</b> water.']]},
+ {h:'each / every, both / either / neither',
+  p:`<span class="en"><b>each / every</b></span> + שם עצם <b>יחיד</b> ופועל יחיד: <span class="en">Every student <b>is</b> here. Each of them <b>has</b> a book.</span><br><span class="en"><b>both</b></span> = שניהם (+ רבים), <span class="en"><b>either</b></span> = אחד מהשניים, <span class="en"><b>neither</b></span> = אף אחד מהשניים (+ יחיד!): <span class="en">Neither answer <b>is</b> correct.</span><br>בעברית "כל" משמש גם ל-each וגם ל-all — באנגלית each/every ליחידים בנפרד, all לקבוצה כמכלול.`,
+  c:[['כל תלמיד קיבל ספר.','Every students got a book.','<b>Every student</b> got a book.'],['אף אחת מהתשובות לא נכונה.','Neither answers are correct.','<b>Neither answer is</b> correct.']]},
+ {h:'too much / too many / enough',
+  p:`<span class="en"><b>too many</b></span> + ספיר (<span class="en">too many cars</span>), <span class="en"><b>too much</b></span> + לא-ספיר (<span class="en">too much traffic</span>) — שניהם "יותר מדי", שליליים.<br><span class="en"><b>enough</b></span> = מספיק: <b>אחרי</b> תואר (<span class="en">old enough</span>) אבל <b>לפני</b> שם עצם (<span class="en">enough money</span>).<br>הבחנה שהעברית לא עושה: "יותר מדי" תמיד אותו דבר, אבל באנגלית much/many תלוי אם סופרים.`,
+  c:[['יש יותר מדי אנשים.','too much people','<b>too many</b> people'],['אין מספיק זמן.','not time enough','not <b>enough</b> time'],['הוא מבוגר מספיק.','enough old','old <b>enough</b>']]}
+],
+ex:[
+ {t:'choice', he:'אל תדאג, יש לנו עוד קצת זמן.', q:"Don't worry, we still have ___ time.", opts:['a little','little','a few','few'], a:0, why:'משמעות חיובית ("יש עוד") + זמן (לא-ספיר) → a little. "little time" היה אומר שכמעט אין.'},
+ {t:'choice', he:'מעט מאוד אנשים הגיעו, לצערי.', q:'Sadly, ___ people came.', opts:['few','a few','little','a little'], a:0, why:'משמעות שלילית ("מעט מדי") + אנשים (ספיר) → few (בלי a).'},
+ {t:'choice', he:'כל ילד בכיתה קיבל פרס.', q:'___ child in the class got a prize.', opts:['Every','All','Both'], a:0, why:'each/every + שם עצם יחיד (child) ופועל יחיד. All היה דורש רבים: All the children got…'},
+ {t:'fix', toks:['Neither','of','the','answers','are','correct.'], bad:4, opts:['is','were','have'], a:0, fixed:'Neither of the answers is correct.', why:'neither מתייחס לאף אחד מן השניים, בנפרד → פועל יחיד: is.'},
+ {t:'sort', buckets:['too much (+ לא-ספיר)','too many (+ ספיר)'], items:[['traffic',0],['cars',1],['noise',0],['people',1],['money',0],['mistakes',1],['information',0],['questions',1]], why:'much עם דברים שלא סופרים (traffic, noise, money, information); many עם דברים שסופרים (cars, people, mistakes, questions).'},
+ {t:'type', he:'הוא צעיר מדי לנהוג.', q:'He is ___ (צעיר מדי) to drive.', a:['too young'], why:'"מדי" = too, לפני התואר: too young. (enough היה הופך את המשמעות: old enough = מבוגר מספיק.)'},
+ {t:'build', he:'יש לנו מספיק כסף לכרטיסים.', words:['We','have','enough','money','for','the','tickets'], extra:['money enough','too'], why:'enough בא לפני שם עצם: enough money. (אחרי תואר זה הפוך: cheap enough.)'},
+ {t:'choice', he:'שתי התשובות נכונות.', q:'___ answers are correct.', opts:['Both','Either','Neither','Each'], a:0, why:'both = שניהם, עם פועל רבים (are). either/neither מתייחסים לאחד/אף אחד ולוקחים יחיד.'},
+ {t:'match', pairs:[['כמה חברים (חיובי)','a few friends'],['מעט חברים (שלילי)','few friends'],['קצת זמן (חיובי)','a little time'],['מעט זמן (שלילי)','little time'],['יותר מדי רעש','too much noise'],['מספיק כיסאות','enough chairs']], why:'ה-a הופך שלילי לחיובי; ספיר לוקח few, לא-ספיר לוקח little; ההבחנה חוזרת בכל זוג.'}
+]},
+
+{ id:'phrasal', name:'Give up', he:'פעלים מורכבים', tag:'"turn off it" שגוי — למה הכינוי חייב לקפוץ לאמצע',
+teach:[
+ {h:'פועל + מילית = משמעות חדשה לגמרי',
+  p:`<span class="en">give <b>up</b></span> = לוותר, <span class="en">look <b>after</b></span> = לטפל, <span class="en">put <b>off</b></span> = לדחות, <span class="en">run <b>into</b></span> = להיתקל, <span class="en">work <b>out</b></span> = להתאמן / להסתדר, <span class="en">figure <b>out</b></span> = להבין.<br>המשמעות לא מילולית — <span class="en">give up</span> אינו "לתת למעלה". דוברי עברית נוטים לפועל לטיני יחיד (<span class="en">continue, tolerate, discover</span>); דוברי אנגלית מעדיפים את הצירוף בדיבור (<span class="en">carry on, put up with, find out</span>).`,
+  c:[['הוא ויתר.','He gave up.','He <b>gave up</b>.'],['נתקלתי בחבר ישן.','I met into an old friend.','I <b>ran into</b> an old friend.'],['בוא נדחה את הפגישה.','','Let\'s <b>put off</b> the meeting.']]},
+ {h:'ניתנים להפרדה — והכינוי חייב לקפוץ לאמצע',
+  p:`עם שם עצם, שתי הצורות תקינות: <span class="en">turn <b>off</b> the light</span> / <span class="en">turn the light <b>off</b></span>.<br>אבל עם כינוי (<span class="en">it, them, him</span>) — הוא <b>חייב</b> לבוא באמצע: <span class="en">turn <b>it</b> off</span> ✓ · <span class="en bad">turn off it</span> ✗.<br>למה? הכינוי הוא מידע "קל" וישן, והאנגלית דוחפת אותו קרוב לפועל, לפני המילית הכבדה.`,
+  c:[['תכבה אותו.','Turn off it.','Turn <b>it</b> off.'],['מלאתי את הטופס.','I filled in it.','I filled <b>it</b> in.']]},
+ {h:'לא ניתנים להפרדה',
+  p:`חלק מהצירופים לא נפרדים — הכינוי בא <b>אחרי</b> המילית:<br><span class="en">look after <b>him</b></span> (לא look him after), <span class="en">run into <b>her</b>, get over <b>it</b>, deal with <b>it</b>, come across <b>them</b></span>.<br>אין דרך לדעת מהצורה — לומדים כל צירוף עם ההתנהגות שלו, בדיוק כמו שלומדים פועל עם מילת היחס שלו.`,
+  c:[['היא מטפלת בהם.','She looks them after.','She <b>looks after them</b>.'],['תתגבר על זה.','Get it over.','<b>Get over it</b>.']]}
+],
+ex:[
+ {t:'fix', toks:['Please','turn','off','it.'], bad:2, opts:['it off.','off it.','it.'], a:0, fixed:'Please turn it off.', why:'turn off ניתן להפרדה, ולכן כינוי (it) חייב לבוא באמצע: turn it off. "turn off it" שגוי תמיד.'},
+ {t:'match', pairs:[['give up','לוותר'],['look after','לטפל ב'],['put off','לדחות'],['run into','להיתקל ב'],['work out','להתאמן / להסתדר'],['find out','לגלות']], why:'המשמעות אינה סכום המילים. כל צירוף הוא יחידה שלמה שצריך ללמוד כמכלול.'},
+ {t:'build', he:'תכבה את הטלוויזיה, בבקשה.', words:['Please','turn','the','TV','off'], extra:['off the','it'], alt:[['Please','turn','off','the','TV']], why:'עם שם עצם (the TV) שתי הצורות תקינות: turn the TV off / turn off the TV. רק כינוי חייב לאמצע.'},
+ {t:'choice', he:'מי מטפל בילדים?', q:'Who looks ___ the children?', opts:['after','for','over'], a:0, why:'look after = לטפל ב. look for = לחפש; look over = לעבור על. הצירוף קובע את המשמעות.'},
+ {t:'choice', he:'תתגבר על זה.', q:'איזה משפט נכון?', opts:['Get over it.','Get it over.','Get over.'], a:0, why:'get over לא ניתן להפרדה → הכינוי בא אחרי: get over it.'},
+ {t:'type', he:'הם דחו את החתונה.', q:'They ___ the wedding (דחו).', a:['put off','postponed'], hint:'put + ___', why:'put off = לדחות. (postponed הוא המקבילה הלטינית התקינה גם היא.)'},
+ {t:'fix', toks:['I','looked','it','after','all','week.'], bad:2, opts:['after it','it','after'], a:0, fixed:'I looked after it all week.', why:'look after לא ניתן להפרדה → הכינוי בא אחרי המילית: looked after it, לא looked it after.'},
+ {t:'choice', he:'סוף סוף הבנתי את הבעיה.', q:'I finally ___ the problem.', opts:['figured out','figured','found'], a:0, why:'figure out = להבין / לפענח. figure לבד לא נושא את המשמעות; המילית out היא חלק מהצירוף.'},
+ {t:'sort', buckets:['ניתן להפרדה','לא ניתן להפרדה'], items:[['turn off',0],['look after',1],['put off',0],['run into',1],['fill in',0],['get over',1]], why:'turn off / put off / fill in מקבלים כינוי באמצע. look after / run into / get over — הכינוי תמיד אחרי המילית.'}
+]},
+
+{ id:'causative', name:'Had it done', he:'הגורם והסביל האישי', tag:'"הסתפרתי" זה לא "חתכתי את השיער שלי"',
+teach:[
+ {h:'have / get something done = מישהו אחר עשה לך',
+  p:`<span class="en">I <b>cut</b> my hair</span> = חתכתי בעצמי. <span class="en">I <b>had</b> my hair <b>cut</b></span> = הסתפרתי (הספר חתך).<br>המבנה: <span class="en">have + מושא + V3</span>. הוא אומר שגרמת לשירות להיעשות, בלי לומר בידי מי.<br>בעברית הבניין עושה את זה (הסתפרתי, תיקנתי = מסרתי לתיקון); באנגלית המבנה <span class="en">have … done</span> הוא הדרך.`,
+  c:[['הסתפרתי אתמול.','I cut my hair yesterday.','I <b>had</b> my hair <b>cut</b> yesterday.'],['תיקנתי את המכונית.','I repaired my car.','I <b>had</b> my car <b>repaired</b>.'],['צילמנו את הבית.','','We <b>had</b> the house <b>photographed</b>.']]},
+ {h:'get = גרסה יומיומית יותר',
+  p:`בדיבור, <span class="en">get</span> מחליף את <span class="en">have</span> באותו מבנה: <span class="en">I need to <b>get</b> my phone <b>fixed</b>. She <b>got</b> her nails <b>done</b>.</span><br>שתי הצורות זהות במשמעות; <span class="en">get</span> פחות פורמלי. הזמן יושב על have/get: <span class="en">had / will have / am having … done</span>.`,
+  c:[['אני צריך לתקן את הטלפון.','I need to fix my phone (במעבדה).','I need to <b>get</b> my phone <b>fixed</b>.'],['היא עשתה ציפורניים.','','She <b>got</b> her nails <b>done</b>.']]},
+ {h:'דיווח לא-אישי: It is said that…',
+  p:`כדי לדווח דעה כללית בלי לומר מי אמר: <span class="en"><b>It is said that</b> he is rich.</span> / <span class="en">He <b>is said to be</b> rich.</span><br>גם: <span class="en">It is believed / thought / reported / known that…</span><br>בעברית "אומרים ש...", "ידוע ש..." — סתמי. האנגלית משתמשת בסביל לא-אישי כדי להשיג את אותה סתמיות מכובדת (נפוץ בעיתונות ובאקדמיה).`,
+  c:[['אומרים שהוא עשיר.','They say he is rich. →','<b>It is said that</b> he is rich.'],['ידוע שעישון מזיק.','','<b>It is known that</b> smoking is harmful.']]}
+],
+ex:[
+ {t:'choice', he:'הסתפרתי בשבוע שעבר.', q:'I ___ last week.', opts:['had my hair cut','cut my hair','had cut my hair'], a:0, why:'הספר חתך, לא אתה → have + מושא + V3: had my hair cut. "cut my hair" אומר שעשית זאת בעצמך.'},
+ {t:'build', he:'אנחנו צריכים לתקן את הגג.', words:['We','need','to','get','the','roof','fixed'], extra:['fix','fixing'], why:'get + מושא + V3: get the roof fixed. מישהו אחר יתקן עבורנו.'},
+ {t:'type', he:'היא צבעה את הבית (מישהו צבע לה).', q:'She ___ her house ___ (paint).', a:['had','painted','got'], why:'have/get + house + painted. הצורה השלישית של paint היא painted; הבעלים לא צבעו בעצמם.'},
+ {t:'fix', toks:['I','had','repaired','my','watch.'], bad:2, opts:['my watch repaired','repair','repairing my watch'], a:0, fixed:'I had my watch repaired.', why:'במבנה הגורם, המושא בא לפני ה-V3: had my watch repaired. "had repaired my watch" זה Past Perfect — משמעות אחרת (כבר תיקנתי בעצמי).'},
+ {t:'choice', he:'אומרים שהיא הסופרת הכי טובה בדורה.', q:'___ she is the best writer of her generation.', opts:['It is said that','They are said','She is said that'], a:0, why:'דיווח לא-אישי: It is said that + משפט. זו דרך מכובדת לומר "אומרים ש".'},
+ {t:'choice', he:'הוא נחשב לעשיר מאוד.', q:'He ___ very rich.', opts:['is said to be','is said that','says to be'], a:0, why:'הגרסה השנייה: נושא + is said + to be. "He is said to be rich" = אומרים עליו שהוא עשיר.'},
+ {t:'match', pairs:[['הסתפרתי','I had my hair cut'],['תיקנתי את הרכב','I had my car repaired'],['אני צריך לתקן את הטלפון','I need to get my phone fixed'],['אומרים ש...','It is said that…'],['ידוע ש...','It is known that…'],['נחשב ל...','is said to be…']], why:'"לגרום שיעשו לך" → have/get + V3. "אומרים / ידוע" סתמי → סביל לא-אישי.'},
+ {t:'choice', he:'עליי לבדוק את העיניים (אצל רופא).', q:'I must ___.', opts:['have my eyes tested','test my eyes','have tested my eyes'], a:0, why:'רופא בודק, לא אתה → have my eyes tested (מושא לפני V3).'},
+ {t:'build', he:'מאמינים שהוא עזב את המדינה.', words:['It','is','believed','that','he','has','left','the','country'], extra:['believes','leaving'], why:'דיווח לא-אישי: It is believed that + משפט מלא. believe → believed (V3) בסביל.'}
+]}
+]});
+
+LINES.push({
+id:'mastery', name:'Mastery', he:'שליטה', color:'indigo',
+blurb:'הרובד שבו כבר לא טועים — רק מלטשים. מבנים של דוברים מתוחכמים.',
+stations:[
+{ id:'inversion', name:'Never have I…', he:'היפוך והדגשה', tag:'כשמקדימים מילה שלילית, המשפט מתהפך כמו שאלה',
+teach:[
+ {h:'מילה שלילית בראש → היפוך של שאלה',
+  p:`כדי להדגיש, מקדימים ביטוי שלילי לראש המשפט — ואז הנושא והעזר <b>מתהפכים</b>, כמו בשאלה:<br><span class="en">I have <b>never</b> seen such a mess → <b>Never have I</b> seen such a mess.</span><br><span class="en"><b>Rarely does</b> he complain. <b>Not only did</b> she win, but she also broke a record.</span><br>העברית מקדימה אף היא ("מעולם לא ראיתי"), אבל בלי היפוך. באנגלית ההיפוך הוא הסימן הרשמי להדגשה — נפוץ בכתיבה ובנאום.`,
+  c:[['מעולם לא ראיתי דבר כזה.','Never I saw such a thing.','<b>Never have I</b> seen such a thing.'],['רק לעתים רחוקות הוא מתלונן.','Rarely he complains.','<b>Rarely does</b> he complain.']]},
+ {h:'Hardly / No sooner — שני אירועים צמודים',
+  p:`<span class="en"><b>Hardly had</b> I sat down <b>when</b> the phone rang.</span> (בקושי התיישבתי כשהטלפון צלצל)<br><span class="en"><b>No sooner had</b> she left <b>than</b> it started to rain.</span> (לא הספיקה לצאת ומיד ירד גשם)<br>שים לב לצמדים: <span class="en">Hardly … when</span>, <span class="en">No sooner … than</span> — ולעבר המושלם (had + V3) אחרי ההיפוך.`,
+  c:[['בקושי הגעתי, וכבר קראו לי.','','<b>Hardly had</b> I arrived <b>when</b> they called me.']]},
+ {h:'תנאי בהיפוך — בלי if',
+  p:`אפשר להשמיט את <span class="en">if</span> ולהפוך את העזר — נשמע ספרותי ומכובד:<br><span class="en">If I had known → <b>Had I</b> known…</span><br><span class="en">If I were you → <b>Were I</b> you…</span><br><span class="en">If you should need help → <b>Should you</b> need help…</span><br>אותה משמעות של משפט תנאי, רק אלגנטית יותר.`,
+  c:[['אילו ידעתי, הייתי בא.','If I would know…','<b>Had I</b> known, I would have come.'],['אם תזדקק לעזרה, התקשר.','','<b>Should you</b> need help, call me.']]}
+],
+ex:[
+ {t:'build', he:'מעולם לא שמעתי דבר כזה.', words:['Never','have','I','heard','such','a','thing'], extra:['I have','did'], why:'מילה שלילית בראש (Never) → היפוך: עזר (have) לפני הנושא (I). Never have I heard.'},
+ {t:'choice', he:'רק לעתים רחוקות הוא מאחר.', q:'Rarely ___ late.', opts:['is he','he is','does he'], a:0, why:'אחרי מילת תדירות שלילית בראש המשפט — היפוך. עם be: is he. (does he היה נכון עם פועל רגיל: Rarely does he arrive late.)'},
+ {t:'fix', toks:['Never','I','have','felt','so','happy.'], bad:1, opts:['have I','I','did I'], a:0, fixed:'Never have I felt so happy.', why:'אחרי Never בראש המשפט חובה היפוך: have I, לא I have.'},
+ {t:'choice', he:'לא רק שהוא איחר, הוא גם שכח.', q:'Not only ___ late, but he also forgot.', opts:['was he','he was','did he'], a:0, why:'"Not only" בראש → היפוך. עם be בעבר: was he. Not only was he late…'},
+ {t:'type', he:'אילו ידעתי, הייתי מתקשר.', q:'___ I known, I would have called.', a:['Had'], hint:'תנאי בלי if', why:'תנאי שלישי בהיפוך: משמיטים if ומקדימים had. "Had I known" = If I had known.'},
+ {t:'build', he:'לא הספקתי לצאת וירד גשם.', words:['No','sooner','had','I','left','than','it','rained'], extra:['when','did'], why:'הצמד הקבוע No sooner … than, עם היפוך ועבר מושלם: No sooner had I left than…'},
+ {t:'choice', he:'אם תזדקק לעזרה כלשהי, אל תהסס.', q:'___ you need any help, don\'t hesitate.', opts:['Should','If','Would'], a:0, why:'תנאי מכובד בהיפוך: Should you need… = If you should need… (= אם במקרה תזדקק).'},
+ {t:'choice', he:'בקושי סיימתי כשהם הגיעו.', q:'Hardly ___ finished when they arrived.', opts:['had I','I had','did I'], a:0, why:'Hardly בראש → היפוך + עבר מושלם: had I finished. הצמד הוא Hardly … when.'},
+ {t:'match', pairs:[['If I had known','Had I known'],['If I were you','Were I you'],['If you should need','Should you need'],['I have never seen','Never have I seen'],['He rarely calls','Rarely does he call'],['She not only sang','Not only did she sing']], why:'כל היפוך מקדים ביטוי מודגש ומהפך את סדר הנושא והעזר — מבנה אחד בכל השורות.'}
+]},
+
+{ id:'wish', name:'I wish I had…', he:'משאלות ועבר לא-ממשי', tag:'"הלוואי" שמשתמש בעבר כדי לדבר על ההווה',
+teach:[
+ {h:'wish + עבר = צער על ההווה',
+  p:`<span class="en">I <b>wish</b> I <b>had</b> a car.</span> = הלוואי שהיה לי מכונית (אין לי, עכשיו).<br>העבר (<span class="en">had</span>) לא מסמן זמן — הוא מסמן <b>ריחוק מהמציאות</b>, בדיוק כמו בתנאי הדמיוני.<br>עם be: <span class="en">I wish I <b>were</b> taller</span> (were לכל הגופים).<br>בעברית "הלוואי ש..." + הווה; באנגלית wish + עבר. זו המלכודת המרכזית.`,
+  c:[['הלוואי שהיה לי זמן.','I wish I have time.','I wish I <b>had</b> time.'],['הלוואי שהייתי גבוה יותר.','I wish I was taller. (בדיבור) →','I wish I <b>were</b> taller.']]},
+ {h:'wish + עבר מושלם = צער על העבר',
+  p:`<span class="en">I <b>wish</b> I <b>had studied</b> harder.</span> = הלוואי שהייתי לומד יותר (אבל לא למדתי — נגמר).<br>ההבחנה שהעברית לא עושה: "הלוואי שהייתי לומד" יכול להיות על עכשיו או על אתמול; באנגלית <span class="en">wish + had + V3</span> אומר בבירור: מאוחר מדי, זה כבר קרה.`,
+  c:[['הלוואי שלא אמרתי את זה.','I wish I didn\'t say that.','I wish I <b>hadn\'t said</b> that.'],['הלוואי שהקשבתי לך.','','I wish I <b>had listened</b> to you.']]},
+ {h:'wish + would · would rather · it\'s time',
+  p:`<span class="en">wish + <b>would</b></span> = מרגיז אותי, הלוואי שישתנה: <span class="en">I wish you <b>would stop</b> shouting.</span><br><span class="en"><b>would rather</b></span> = מעדיף: <span class="en">I'd rather <b>stay</b></span> (+ בסיס) · <span class="en">I'd rather you <b>stayed</b></span> (+ עבר, לגוף אחר).<br><span class="en"><b>It's (high) time</b></span> + עבר: <span class="en">It's time we <b>left</b>.</span> (הגיע הזמן שנלך) — שוב, עבר לא-ממשי להווה.`,
+  c:[['הלוואי שתפסיק לאחר.','I wish you stop being late.','I wish you <b>would stop</b> being late.'],['הגיע הזמן שנלך.','It\'s time we go.','It\'s time we <b>left</b>.']]}
+],
+ex:[
+ {t:'choice', he:'הלוואי שהיה לי יותר זמן.', q:'I wish I ___ more time.', opts:['had','have','would have'], a:0, why:'wish על ההווה → עבר לא-ממשי: had. "have" מתעלם מהריחוק מהמציאות.'},
+ {t:'choice', he:'הלוואי שלמדתי רפואה (אבל לא למדתי).', q:'I wish I ___ medicine.', opts:['had studied','studied','would study'], a:0, why:'צער על העבר → wish + had + V3: had studied. זה כבר קרה, אי אפשר לשנות.'},
+ {t:'type', he:'הלוואי שהייתי יודע את התשובה.', q:'I wish I ___ (know) the answer.', a:['knew'], hint:'עבר לא-ממשי', why:'wish על ההווה → צורת עבר: knew. הלוואי שידעתי (עכשיו).'},
+ {t:'fix', toks:['I','wish','you','will','stop','smoking.'], bad:3, opts:['would','did','can'], a:0, fixed:'I wish you would stop smoking.', why:'wish + would להבעת מטרד ורצון לשינוי בהתנהגות של מישהו אחר. אחרי wish אף פעם לא will.'},
+ {t:'choice', he:'הלוואי שלא אמרתי את זה.', q:"I wish I ___ that.", opts:["hadn't said","didn't say",'wouldn\'t say'], a:0, why:'צער על אמירה שכבר נאמרה → wish + hadn\'t + V3: hadn\'t said.'},
+ {t:'build', he:'הגיע הזמן שנלך הביתה.', words:["It's",'time','we','went','home'], extra:['go','will go'], why:'It\'s time + עבר לא-ממשי: It\'s time we went. המשמעות עכשווית, הצורה עבר.'},
+ {t:'choice', he:'אני מעדיף שתישאר.', q:"I'd rather you ___.", opts:['stayed','stay','will stay'], a:0, why:'would rather + נושא אחר → עבר לא-ממשי: I\'d rather you stayed. (לאותו נושא: I\'d rather stay — בסיס.)'},
+ {t:'choice', he:'הלוואי שהייתי במקום אחר.', q:'I wish I ___ somewhere else.', opts:['were','was','am'], a:0, why:'wish + be → were לכל הגופים בשפה תקנית. (was נשמע בדיבור, were נכון.)'},
+ {t:'match', pairs:[['הלוואי שהיה לי','I wish I had'],['הלוואי שלמדתי','I wish I had studied'],['הלוואי שתפסיק','I wish you would stop'],['הגיע הזמן שנלך','It\'s time we left'],['אני מעדיף להישאר','I\'d rather stay'],['אני מעדיף שתלך','I\'d rather you went']], why:'כל המבנים משתמשים בעבר כדי לדבר על מציאות שאינה מתקיימת — עבר של ריחוק, לא של זמן.'}
+]},
+
+{ id:'cleft', name:'It was you who…', he:'משפטי הדגשה', tag:'איך מדגישים מילה אחת בלי להרים את הקול',
+teach:[
+ {h:'It-cleft: דווקא זה',
+  p:`בעברית מדגישים בטון או ב"דווקא": <b>דווקא יוסי שבר את זה.</b> באנגלית מפצלים את המשפט:<br><span class="en"><b>It was</b> John <b>who</b> broke it.</span> (הדגשת מי) · <span class="en"><b>It was</b> the vase (that) he broke.</span> (הדגשת מה) · <span class="en"><b>It was</b> yesterday <b>that</b> we met.</span> (הדגשת מתי)<br>הבסיס: <span class="en">It + be + החלק המודגש + who/that + השאר</span>.`,
+  c:[['דווקא אתה התחלת.','You started, actually.','<b>It was you who</b> started it.'],['דווקא בפריז נפגשנו.','','<b>It was in Paris that</b> we met.']]},
+ {h:'Wh-cleft: מה ש...',
+  p:`דרך שנייה, שמתחילה ב-<span class="en">What</span>:<br><span class="en"><b>What I need is</b> more time.</span> (מה שאני צריך זה עוד זמן) · <span class="en"><b>What she did was</b> (to) call the police.</span><br>גם: <span class="en"><b>All I want is</b> a coffee. <b>The thing that</b> annoys me is the noise.</span><br>המבנה מכין את השומע: "שים לב, המידע החשוב מגיע עכשיו".`,
+  c:[['מה שאני צריך זה שקט.','I need quiet.','<b>What I need is</b> quiet.'],['כל מה שאני רוצה זה לעזור.','','<b>All I want is</b> to help.']]},
+ {h:'The reason … is that',
+  p:`להדגשת סיבה: <span class="en"><b>The reason (why)</b> I called <b>is that</b> I need help.</span><br>שים לב: <span class="en">is <b>that</b></span>, לא <span class="en bad">is because</span> — "הסיבה היא ש...", לא "הסיבה היא כי...". בעברית "הסיבה היא כי" נשמע טבעי, ולכן זו טעות נפוצה.`,
+  c:[['הסיבה שאיחרתי היא שהיה פקק.','The reason I was late is because of traffic.','The reason I was late <b>is that</b> there was traffic.']]}
+],
+ex:[
+ {t:'build', he:'דווקא יוסי שבר את החלון.', words:['It','was','Yossi','who','broke','the','window'], extra:['that broke','he broke'], why:'It-cleft להדגשת מי: It was + Yossi + who + השאר. עם אנשים עדיף who.'},
+ {t:'choice', he:'מה שאני צריך זה עוד זמן.', q:'___ more time.', opts:['What I need is','I need','That I need is'], a:0, why:'Wh-cleft: What + נושא + פועל + is + החלק המודגש. "What I need is…" מכין את ההדגשה.'},
+ {t:'fix', toks:['The','reason','I','left','is','because','I','was','tired.'], bad:5, opts:['that','why','so'], a:0, fixed:'The reason I left is that I was tired.', why:'"The reason … is that", לא "is because". "הסיבה היא ש", לא "הסיבה היא כי" — שכפול של הסיבתיות.'},
+ {t:'choice', he:'דווקא אתמול הם התקשרו.', q:'___ they called.', opts:['It was yesterday that','Yesterday was that','That was yesterday'], a:0, why:'It-cleft להדגשת זמן: It was + yesterday + that + השאר.'},
+ {t:'type', he:'כל מה שאני רוצה זה קצת שקט.', q:'___ I want is a little quiet.', a:['All'], hint:'___ I want is…', why:'"כל מה ש..." → All I want is… מבנה הדגשה שמצמצם למה שבאמת חשוב.'},
+ {t:'build', he:'מה שהיא עשתה היה להתקשר למשטרה.', words:['What','she','did','was','call','the','police'], extra:['she called','to called'], why:'Wh-cleft: What she did was + (to) call. אחרי was אפשר בסיס או to + בסיס.'},
+ {t:'choice', he:'דווקא את האגרטל הוא שבר, לא הצלחת.', q:'___ he broke, not the plate.', opts:['It was the vase that','The vase was that','That was the vase'], a:0, why:'It-cleft להדגשת המושא: It was the vase that…'},
+ {t:'match', pairs:[['דווקא הוא אשם','It was he who is to blame'],['מה שאני צריך זה עזרה','What I need is help'],['כל מה שרצינו זה לנוח','All we wanted was to rest'],['דווקא אז הבנתי','It was then that I understood'],['הסיבה היא ש...','The reason is that…'],['מה שקרה היה...','What happened was…']], why:'It-cleft מדגיש רכיב (מי/מה/מתי); Wh-cleft פותח ב-What/All ומעכב את המידע החשוב לסוף.'}
+]},
+
+{ id:'linking', name:'Although / despite', he:'קישור וניגוד', tag:'"despite" ו"although" אומרים אותו דבר — אבל אחריהם בא משהו אחר',
+teach:[
+ {h:'although + משפט · despite + שם עצם',
+  p:`שניהם = "למרות", אבל הדקדוק שונה:<br><span class="en"><b>Although</b> it was raining, we went out.</span> (although + נושא + פועל)<br><span class="en"><b>Despite</b> the rain, we went out.</span> / <span class="en"><b>In spite of</b> the rain…</span> (despite + שם עצם / -ing)<br>הטעות הנפוצה: <span class="en bad">despite it was raining</span> ✗. אחרי despite אין משפט שלם — רק שם עצם או <span class="en">the fact that…</span>`,
+  c:[['למרות הגשם, יצאנו.','Despite it rained, we went out.','<b>Despite</b> the rain, we went out.'],['למרות שהיה קר, שחינו.','Despite it was cold…','<b>Although</b> it was cold, we swam.']]},
+ {h:'however / therefore — פסיק ולא but',
+  p:`<span class="en"><b>however</b></span> = "אולם" (ניגוד), <span class="en"><b>therefore</b></span> = "לכן" (תוצאה), <span class="en"><b>nevertheless</b></span> = "אף על פי כן". אלה תוארי משפט, לא מילות חיבור:<br><span class="en">It was expensive. <b>However,</b> we bought it.</span> (משפט נפרד + פסיק, לא but)<br>בעברית "אבל" מחבר הכול; באנגלית but מחבר בתוך משפט, ואילו however פותח משפט חדש אחרי נקודה או נקודה-פסיק.`,
+  c:[['זה היה יקר. אף על פי כן, קנינו.','It was expensive, however we bought it.','It was expensive. <b>However,</b> we bought it.']]},
+ {h:'whereas / while — השוואה בין שניים',
+  p:`<span class="en"><b>whereas</b></span> / <span class="en"><b>while</b></span> = "ואילו" — מנגידים שני מצבים:<br><span class="en">He likes tea, <b>whereas</b> she prefers coffee.</span><br>וגם מטרה: <span class="en"><b>so that</b></span> (+ משפט) מול <span class="en"><b>in order to</b></span> (+ בסיס): <span class="en">I left early <b>so that</b> I would catch the train / <b>in order to</b> catch the train.</span>`,
+  c:[['הוא אוהב תה, ואילו היא מעדיפה קפה.','','He likes tea, <b>whereas</b> she prefers coffee.'],['יצאתי מוקדם כדי לתפוס רכבת.','…so that to catch…','…<b>in order to</b> catch the train.']]}
+],
+ex:[
+ {t:'choice', he:'למרות הגשם, המשחק נמשך.', q:'___ the rain, the game continued.', opts:['Despite','Although','However'], a:0, why:'לפני שם עצם (the rain) → Despite / In spite of. Although היה דורש משפט שלם: Although it rained.'},
+ {t:'choice', he:'למרות שהיא הייתה עייפה, היא סיימה.', q:'___ she was tired, she finished.', opts:['Although','Despite','However'], a:0, why:'לפני משפט שלם (she was tired) → Although / Though / Even though. despite לא לוקח משפט.'},
+ {t:'fix', toks:['Despite','it','was','late,','we','stayed.'], bad:0, opts:['Although','In spite','However'], a:0, fixed:'Although it was late, we stayed.', why:'"it was late" הוא משפט שלם → צריך Although. despite דורש שם עצם: Despite the late hour.'},
+ {t:'choice', he:'זה היה קשה. אף על פי כן, הצלחנו.', q:'It was hard. ___, we succeeded.', opts:['However','But','Although'], a:0, why:'בפתיחת משפט חדש (אחרי נקודה) → However, עם פסיק. but מחבר בתוך משפט אחד ולא פותח משפט.'},
+ {t:'build', he:'הוא עשיר, ואילו אחיו עני.', words:['He','is','rich,','whereas','his','brother','is','poor'], extra:['despite','however'], why:'whereas מנגיד שני מצבים בתוך משפט אחד: rich … whereas … poor.'},
+ {t:'type', he:'למרות שעבדנו קשה, נכשלנו.', q:'___ we worked hard, we failed.', a:['Although','Though','Even though'], hint:'+ משפט שלם', why:'לפני משפט (we worked hard) → Although / Though / Even though. לא despite.'},
+ {t:'choice', he:'יצאתי מוקדם כדי לא לאחר.', q:'I left early ___ be late.', opts:['so as not to','so that not','for not to'], a:0, why:'"כדי לא" + בסיס → so as not to / in order not to. "so that" דורש משפט עם פועל עזר (so that I wouldn\'t be late).'},
+ {t:'match', pairs:[['למרות ש (+משפט)','although'],['למרות (+שם)','despite'],['אולם','however'],['לכן','therefore'],['ואילו','whereas'],['כדי ש','so that']], why:'although/despite = ניגוד (אחד עם משפט, אחד עם שם). however/therefore = תוארי משפט. whereas = השוואה. so that = מטרה.'}
+]},
+
+{ id:'nuance', name:'Fewer / less', he:'דיוק ומשלב', tag:'הטעויות שגם דוברי אנגלית עושים — וכך תדע יותר טוב מהם',
+teach:[
+ {h:'fewer / less · between / among · who / whom',
+  p:`<span class="en"><b>fewer</b></span> + ספיר (<span class="en">fewer people</span>), <span class="en"><b>less</b></span> + לא-ספיר (<span class="en">less money</span>). ("10 items or <b>less</b>" בסופר הוא שגוי מפורסם — צ"ל fewer.)<br><span class="en"><b>between</b></span> = בין שניים, <span class="en"><b>among</b></span> = בין רבים.<br><span class="en"><b>who</b></span> = נושא, <span class="en"><b>whom</b></span> = מושא (<span class="en">To <b>whom</b> did you give it?</span>) — פורמלי, אבל מסמן דיוק.`,
+  c:[['פחות אנשים הגיעו.','less people','<b>fewer</b> people'],['פחות כסף','fewer money','<b>less</b> money'],['בין ארבעתנו','between the four of us','<b>among</b> the four of us']]},
+ {h:'צירופים קבועים (collocations)',
+  p:`מילים נבחרות בני זוג — לא לפי היגיון אלא לפי הרגל:<br><span class="en"><b>heavy</b> rain</span> (לא strong rain), <span class="en"><b>strong</b> coffee / tea</span> (לא heavy), <span class="en"><b>make</b> a decision</span> (לא do), <span class="en"><b>do</b> research, <b>take</b> a risk, <b>pay</b> attention, <b>keep</b> a promise, <b>catch</b> a cold, <b>heavy</b> traffic</span>.<br>המבחן ל-fluency אמיתי הוא לא הכללים — אלה הצירופים. דובר ילידי "שומע" שגשם הוא heavy וקפה הוא strong.`,
+  c:[['גשם כבד','strong rain','<b>heavy</b> rain'],['קפה חזק','strong coffee ✓','<b>strong</b> coffee'],['לקבל החלטה','do a decision','<b>make</b> a decision']]},
+ {h:'משלב: מתי מנומס, מתי יומיומי',
+  p:`אותה כוונה, מילים שונות לפי הסיטואציה:<br>יומיומי → פורמלי: <span class="en">get → receive, buy → purchase, need → require, kids → children, ask for → request, sorry → apologise</span>.<br>בכתיבה רשמית: בלי קיצורים (<span class="en">do not</span> ולא <span class="en">don't</span>), בלי סלנג, משפטים שלמים. בדיבור ידידותי — הפוך.<br>העברית גם מבחינה משלבים (לרכוש / לקנות); הסוד הוא להתאים את המילה לקהל.`,
+  c:[['קיבלתי את מכתבך (רשמי).','I got your letter.','I <b>received</b> your letter.'],['אני מתנצל על העיכוב.','I\'m sorry for the delay.','I <b>apologise</b> for the delay.']]}
+],
+ex:[
+ {t:'choice', he:'פחות אנשים הגיעו השנה.', q:'___ people came this year.', opts:['Fewer','Less'], a:0, why:'people = ספיר → fewer. less שמור ללא-ספירים (less water). זו טעות שאפילו שלטים בסופר עושים.'},
+ {t:'sort', buckets:['fewer (+ ספיר)','less (+ לא-ספיר)'], items:[['people',0],['money',1],['cars',0],['time',1],['mistakes',0],['water',1],['jobs',0],['noise',1]], why:'אם אפשר לספור (people, cars, mistakes, jobs) → fewer. אם לא (money, time, water, noise) → less.'},
+ {t:'choice', he:'גשם כבד צפוי מחר.', q:'___ rain is expected tomorrow.', opts:['Heavy','Strong','Big'], a:0, why:'צירוף קבוע: heavy rain (וגם heavy traffic, heavy snow). strong שמור ל-strong coffee / wind.'},
+ {t:'fix', toks:['I','need','to','do','a','decision.'], bad:3, opts:['make','take','have'], a:0, fixed:'I need to make a decision.', why:'הצירוף הוא make a decision. "do a decision" הוא תרגום מילולי של "לעשות החלטה".'},
+ {t:'choice', he:'חילקנו את זה בין ארבעתנו.', q:'We shared it ___ the four of us.', opts:['among','between'], a:0, why:'יותr משניים → among. between שמור לשניים (between you and me).'},
+ {t:'match', pairs:[['גשם כבד','heavy rain'],['קפה חזק','strong coffee'],['לקבל החלטה','make a decision'],['לעשות מחקר','do research'],['לקחת סיכון','take a risk'],['לשמור הבטחה','keep a promise']], why:'צירופים קבועים: לא נגזרים מכלל, נלמדים כזוגות. זה מה שמבדיל דובר שוטף.'},
+ {t:'choice', he:'(רשמי) קיבלתי את בקשתך.', q:'(formal) I ___ your request.', opts:['received','got','took'], a:0, why:'במשלב רשמי get → received. "got" תקין אך יומיומי; במכתב עסקי בוחרים received.'},
+ {t:'type', he:'שים לב לפרטים.', q:'Please ___ attention to the details.', a:['pay'], why:'הצירוף הקבוע pay attention. תשומת לב "משלמים", לא "שמים" (put) ולא "עושים" (do).'},
+ {t:'choice', he:'למי נתת את המפתח? (פורמלי)', q:'To ___ did you give the key?', opts:['whom','who','which'], a:0, why:'אחרי מילת יחס (To) בא whom, כי זה המושא. סימן לדיוק ולמשלב גבוה.'}
+]}
+]});
 </script>
 <script>/* ===== Grammar Underground — engine ===== */
 (function(){
 'use strict';
-const COLORS={coral:'#E8503A',amber:'#E2A11C',teal:'#1FA79A',violet:'#7B61E0',sky:'#3B8FD9'};
+const COLORS={coral:'#E8503A',amber:'#E2A11C',teal:'#1FA79A',violet:'#7B61E0',sky:'#3B8FD9',rose:'#D6456E',indigo:'#5348C7'};
 const $=(s,r)=>(r||document).querySelector(s);
 const $$=(s,r)=>Array.from((r||document).querySelectorAll(s));
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -1069,13 +1319,20 @@ function shell(inner,activeNav){
 function go(v,arg){view=v;window.scrollTo({top:0});if(v==='map')renderMap();else if(v==='notebook')renderNotebook(arg);else if(v==='settings')renderSettings();else if(v==='station')startStation(arg);else if(v==='review')startReview(arg);}
 
 /* ---------- map ---------- */
-const GEO=[
-  {path:'M20,100 H500 L560,160 H940',nodes:[[200,100],[338,100],[476,100],[614,160],[752,160],[890,160]]},
-  {path:'M20,290 H370 L430,230 H940',nodes:[[200,290],[338,290],[476,230],[614,230],[752,230],[890,230]]},
-  {path:'M20,380 H640 L700,440 H940',nodes:[[200,380],[338,380],[476,380],[614,380],[752,440],[890,440]]},
-  {path:'M20,590 H230 L290,530 H940',nodes:[[200,590],[338,530],[476,530],[614,530],[752,530],[890,530]]},
-  {path:'M20,660 H940',nodes:[[200,660],[338,660],[476,660],[614,660],[752,660],[890,660]]}
-];
+// Map layout is generated so any number of lines / stations works.
+const MAP_TOP=100, MAP_GAP=118, MAP_X0=200, MAP_X1=890, MAP_BEND=30;
+const MAP_H=MAP_TOP+(LINES.length-1)*MAP_GAP+120;
+const GEO=LINES.map((L,li)=>{
+  const cnt=L.stations.length+1;                 // stations + terminus
+  const yc=MAP_TOP+li*MAP_GAP;
+  const dy=(li%2?-1:1)*MAP_BEND;
+  const kink=Math.ceil(cnt/2);                    // node index where the lane bends
+  const step=(MAP_X1-MAP_X0)/(cnt-1);
+  const nodes=[];for(let k=0;k<cnt;k++)nodes.push([Math.round(MAP_X0+k*step), k<kink?yc:yc+dy]);
+  const xk0=nodes[kink-1][0], xk1=nodes[kink][0];
+  const path=`M${MAP_X0-180},${yc} H${xk0} L${xk1},${yc+dy} H${MAP_X1}`;
+  return {path,nodes};
+});
 function mapSVG(){
   let s='';
   LINES.forEach((L,li)=>{const g=GEO[li],c=COLORS[L.color];
@@ -1095,7 +1352,7 @@ function mapSVG(){
         <text class="labhe" x="${x}" y="${ly+(above?-14:14)}" text-anchor="middle">${esc(S.he)}</text>
       </g>`;
     });
-    const [tx,ty]=g.nodes[5],tOpen=lineDone(L),tDone=!!store.lines[L.id];
+    const [tx,ty]=g.nodes[L.stations.length],tOpen=lineDone(L),tDone=!!store.lines[L.id];
     s+=`<g class="st ${tOpen?'':'lock'} ${tDone?'done':''}" data-review="${L.id}" tabindex="${tOpen?0:-1}" role="button" aria-label="Terminus — מבחן קו ${esc(L.he)}${tOpen?'':' (נעול)'}">
       <rect class="dot" x="${tx-12}" y="${ty-12}" width="24" height="24" rx="6" fill="${tDone?c:'var(--surface)'}" stroke="${c}" stroke-width="5"/>
       ${tDone?`<path d="M${tx-5},${ty} l3.5,3.5 l7,-7" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>`:''}
@@ -1105,12 +1362,12 @@ function mapSVG(){
   });
   const last=byId(store.last)||ALL[0];const [hx,hy]=GEO[last.li].nodes[last.si];
   s+=`<g class="train" style="transform:translate(${hx-40}px,${hy}px)"><rect x="-16" y="-9" width="32" height="18" rx="6" fill="var(--ink)"/><rect x="-11" y="-5" width="8" height="7" rx="1.5" fill="var(--bg)"/><rect x="3" y="-5" width="8" height="7" rx="1.5" fill="var(--bg)"/><rect x="-16" y="5" width="32" height="3" fill="var(--amber)"/></g>`;
-  return `<svg viewBox="0 0 1000 720" role="img" aria-label="מפת הקווים">${s}</svg>`;
+  return `<svg viewBox="0 0 1000 ${MAP_H}" role="img" aria-label="מפת הקווים">${s}</svg>`;
 }
 function renderMap(){
   const fresh=totalDone()===0&&!store.last;
   const next=(()=>{const l=byId(store.last);if(l&&!isDone(l.id))return l;for(const S of ALL)if(!isDone(S.id)&&unlocked(S))return S;return null;})();
-  const welcome=fresh?`<section class="welcome"><div><h2>כל תחנה היא כלל אחד — והסיבה שמאחוריו.</h2><p>המשחק בנוי כמפת רכבת תחתית: חמישה קווים, 25 תחנות. בכל תחנה תראה איך העברית חושבת, איך האנגלית חושבת, ולמה — ואז תתרגל עד שזה יושב. תתחיל בקו האדום.</p></div><button class="go" data-go="${ALL[0].id}">לתחנה הראשונה: I am</button></section>`
+  const welcome=fresh?`<section class="welcome"><div><h2>כל תחנה היא כלל אחד — והסיבה שמאחוריו.</h2><p>המשחק בנוי כמפת רכבת תחתית: ${LINES.length} קווים, ${ALL.length} תחנות — מהיסודות ועד רובד השליטה המתקדם. בכל תחנה תראה איך העברית חושבת, איך האנגלית חושבת, ולמה — ואז תתרגל עד שזה יושב. תתחיל בקו האדום.</p></div><button class="go" data-go="${ALL[0].id}">לתחנה הראשונה: I am</button></section>`
    :next?`<section class="welcome"><div><h2>התחנה הבאה: <span class="en">${esc(next.name)}</span> · ${esc(next.he)}</h2><p>${esc(next.tag)}</p></div><button class="go" style="background:${COLORS[next.line.color]};box-shadow:0 6px 18px ${COLORS[next.line.color]}55" data-go="${next.id}">המשך נסיעה</button></section>`
    :`<section class="welcome"><div><h2>כל 25 התחנות הושלמו.</h2><p>המפה פתוחה לחזרה חופשית. המחברת שומרת את הטעויות שלך לתרגול חוזר.</p></div></section>`;
   const board=LINES.map(L=>{const c=COLORS[L.color],d=L.stations.filter(s=>isDone(s.id)).length;
@@ -1431,7 +1688,7 @@ function renderSettings(){
     <div class="setrow"><div class="l"><b>מראה</b><span>בהיר, כהה, או לפי המכשיר</span></div><div class="seg">${[['auto','אוטומטי'],['light','בהיר'],['dark','כהה']].map(([k,v])=>`<button data-theme="${k}" aria-pressed="${s.theme===k}">${v}</button>`).join('')}</div></div>
     <div class="setrow"><div class="l"><b>איפוס התקדמות</b><span>מוחק XP, תחנות שהושלמו ואת המחברת</span></div><button class="btn ghost danger" id="reset">אפס הכול</button></div>
   </section>
-  <section class="card" style="color:var(--muted);font-size:.9rem"><b style="color:var(--ink)">איך המשחק בנוי</b><br>חמישה קווים, 25 תחנות, ${ALL.reduce((n,S)=>n+S.ex.length,0)} תרגילים. כל תחנה נפתחת בכמה כרטיסי "למה" שמסבירים את ההבדל בין איך שהעברית חושבת לאיך שהאנגלית חושבת, ואז תרגול בשישה סוגי משימות. תשובה נכונה בניסיון ראשון = 10 XP, אחרי החלקה אחת = 5, ורצף של שלוש נכונות מוסיף בונוס. טעויות נאספות במחברת ונמחקות כשעונים נכון בתרגול חוזר. הכול נשמר במכשיר הזה, בלי חשבון ובלי אינטרנט.</section>`,'settings');
+  <section class="card" style="color:var(--muted);font-size:.9rem"><b style="color:var(--ink)">איך המשחק בנוי</b><br>${LINES.length} קווים, ${ALL.length} תחנות, ${ALL.reduce((n,S)=>n+S.ex.length,0)} תרגילים. כל תחנה נפתחת בכמה כרטיסי "למה" שמסבירים את ההבדל בין איך שהעברית חושבת לאיך שהאנגלית חושבת, ואז תרגול בשישה סוגי משימות. תשובה נכונה בניסיון ראשון = 10 XP, אחרי החלקה אחת = 5, ורצף של שלוש נכונות מוסיף בונוס. טעויות נאספות במחברת ונמחקות כשעונים נכון בתרגול חוזר. הכול נשמר במכשיר הזה, בלי חשבון ובלי אינטרנט.</section>`,'settings');
   $$('[data-set]',app).forEach(b=>b.onclick=()=>{const k=b.dataset.set;s[k]=!s[k];b.setAttribute('aria-checked',s[k]);save();if(k==='sound'&&s.sound)beep('ok');if(k==='tts'&&s.tts)speak('Grammar Underground');});
   $$('[data-theme]',app).forEach(b=>b.onclick=()=>{s.theme=b.dataset.theme;save();applyTheme();renderSettings();});
   $('#reset').onclick=()=>{if(confirm('לאפס את כל ההתקדמות? אי אפשר לבטל.')){store=JSON.parse(JSON.stringify(DEF));save();applyTheme();toast('ההתקדמות אופסה');go('map');}};
